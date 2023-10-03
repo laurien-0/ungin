@@ -240,6 +240,7 @@ def plot_template_comp(df,filename,templates=False):
     df.columns = templates
     df.index = templates
 
-    sns.heatmap(df, vmin=0, vmax=1, cbar=True, cmap="Blues")
+    ax=sns.heatmap(df, vmin=0, vmax=1, cbar=True, cmap="Blues")
+    ax.set(ylabel='Query',xlabel='Template')
     plt.savefig(f'{filename}.png')
     plt.close()
